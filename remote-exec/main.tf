@@ -2,9 +2,9 @@ resource "null_resource" "remote-exec" {
 	connection {
 		type = "ssh"
 		user = var.user_name
-		agent = false					// Disabling "Yes/No" (Whenever we SSH a machine we get this prompt)
+		agent = false					      // Disabling "Yes/No" (Whenever we SSH a machine we get this prompt)
 		host = var.ec2_public_ip
-		private_key =  file(var.ec2_pem_path)		//file function reads the content of file and stores it in a variable as a string content
+		private_key =  file(var.ec2_pem_path) //file function reads the content of file and stores it in a variable as a string content
 		
 	}
 	
